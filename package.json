@@ -1,0 +1,9 @@
+{
+  "name": "promo-tracker",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node generate-promo-tracker.mjs",
+    "dev": "node generate-promo-tracker.mjs && open index.html"
+  }
+}

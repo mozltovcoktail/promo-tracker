@@ -1,0 +1,10 @@
+[
+  {
+    "app": "Example App",
+    "code": "LAUNCH25",
+    "description": "25% off all in-app purchases",
+    "url": "https://example.com",
+    "expires": "2026-12-31",
+    "active": true
+  }
+]
