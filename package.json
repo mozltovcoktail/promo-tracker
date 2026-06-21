@@ -5,5 +5,8 @@
   "scripts": {
     "build": "node generate-promo-tracker.mjs",
     "dev": "node generate-promo-tracker.mjs && open index.html"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
   }
 }
