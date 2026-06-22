@@ -472,8 +472,8 @@
   <div class="header-bottom">
     <input type="search" class="search" id="search" placeholder="Search code or name…">
     <div class="filters">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="available">Available</button>
+      <button class="filter-btn" data-filter="all">All</button>
+      <button class="filter-btn active" data-filter="available">Available</button>
       <button class="filter-btn" data-filter="given">Given</button>
     </div>
   </div>
@@ -533,7 +533,7 @@ async function saveState() {
 const isGiven = code => !!state[code];
 const givenTo = code => state[code]?.givenTo || '';
 
-let activeFilter = 'all', searchVal = '';
+let activeFilter = 'available', searchVal = '';
 
 function matches(c) {
   if (activeFilter === 'available' &&  isGiven(c.code)) return false;
