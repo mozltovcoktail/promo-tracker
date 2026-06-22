@@ -70,7 +70,7 @@ async function importKey(password) {
   )
 }
 
-export { SESSION_COOKIE, SESSION_MAX_AGE }
+export { SESSION_COOKIE, SESSION_MAX_AGE, verifyToken }
 
 function parseCookie(str) {
   return Object.fromEntries(
