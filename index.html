@@ -191,7 +191,7 @@
 
   .grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 12px;
   }
 
@@ -447,7 +447,7 @@
     .stat-total { display: none; }
   }
   @media (max-width: 340px) {
-    .grid { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr !important; }
     .filters .filter-btn:nth-child(3) { display: none; }
   }
 </style>
