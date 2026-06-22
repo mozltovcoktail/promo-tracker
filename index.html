@@ -224,8 +224,35 @@
     border-radius: 13px;
     cursor: pointer;
     overflow: hidden;
+    position: relative;
   }
   .card-qr svg { width: 100%; height: auto; display: block; }
+  .card-qr--given svg { filter: blur(7px); pointer-events: none; }
+
+  .qr-given-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.45);
+    cursor: default;
+  }
+  .qr-given-label {
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #111;
+    text-align: center;
+    line-height: 1.25;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    max-width: 82%;
+    word-break: break-word;
+  }
 
   .card-body {
     padding: 10px;
@@ -545,11 +572,10 @@ function renderCard(c) {
   div.className = 'card' + (given ? ' given' : '');
   div.dataset.code = c.code;
   div.innerHTML =
-    `<div class="card-qr" title="Open redemption link" onclick="window.open('${c.url}','_blank')">${c.svg}</div>
+    `<div class="card-qr${given ? ' card-qr--given' : ''}" ${given ? '' : `title="Open redemption link" onclick="window.open('${c.url}','_blank')"`}>${c.svg}${given ? `<div class="qr-given-overlay" onclick="event.stopPropagation()"><span class="qr-given-label">${name || 'Given'}</span></div>` : ''}</div>
      <div class="card-body">
        <div class="code-text" id="ct-${c.code}" onclick="copyCode('${c.code}')" title="Click to copy">${c.code}</div>
        <span class="badge ${given ? 'badge-used' : 'badge-avail'}">${given ? '✗ Given out' : '✓ Available'}</span>
-       ${given && name ? `<div class="given-to">→ ${name}</div>` : ''}
        <div class="card-actions">
          ${given
            ? `<button class="btn-ghost" onclick="unassign('${c.code}')">Mark available</button>`
