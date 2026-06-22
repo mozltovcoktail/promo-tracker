@@ -510,8 +510,8 @@
   .pulse-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
   .pulse-head .gct-popover-label { margin: 0; }
   .pulse-slider-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: rgba(255,255,255,0.45); }
-  .pulse-slider-row input[type="range"] { flex: 1; accent-color: #a78bfa; height: 4px; cursor: pointer; min-width: 0; }
-  #pulse-btn.active { color: #fff; border-color: rgba(167,139,250,0.7); background: rgba(124,106,247,0.4); box-shadow: 0 0 12px rgba(124,106,247,0.5); }
+  .pulse-slider-row input[type="range"] { flex: 1; accent-color: #ef4444; height: 4px; cursor: pointer; min-width: 0; }
+  #pulse-btn.active { color: #fff; border-color: rgba(239,68,68,0.7); background: rgba(239,68,68,0.4); box-shadow: 0 0 12px rgba(239,68,68,0.55); }
 </style>
 </head>
 <body>
@@ -827,7 +827,7 @@ initState().then(renderAll);
       else { gcTrack.style.background = ''; gcTrack.style.boxShadow = ''; }
     }
     if (pTrack) {
-      if (pulseOn) { pTrack.style.background = '#7c6af7'; pTrack.style.boxShadow = '0 0 12px #7c6af799'; }
+      if (pulseOn) { pTrack.style.background = '#ef4444'; pTrack.style.boxShadow = '0 0 12px #ef444499'; }
       else { pTrack.style.background = ''; pTrack.style.boxShadow = ''; }
     }
     if (pBtn) pBtn.classList.toggle('active', pulseOn);
